@@ -28,6 +28,7 @@ BuildRequires:	mono-csharp >= 1.1.13
 BuildRequires:	mono-devel >= 2.2.0
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel
+BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	rpmbuild(monoautodeps)
 BuildRequires:	sed >= 4.0
 Requires(post,postun):	hicolor-icon-theme
@@ -65,6 +66,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	linuxpkgconfigdir=%{_pkgconfigdir}
+
+%py_postclean
 
 %find_lang %{name} --with-gnome
 
