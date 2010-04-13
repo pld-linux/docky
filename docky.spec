@@ -1,12 +1,12 @@
 %include	/usr/lib/rpm/macros.mono
 Summary:	Docky - a full fledged dock application
 Name:		docky
-Version:	2.0.0
+Version:	2.0.2
 Release:	1
 License:	GPL v3
 Group:		X11/Applications
 Source0:	http://launchpad.net/docky/2.0/%{version}/+download/%{name}-%{version}.tar.gz
-# Source0-md5:	203b960d291ad41a0e40fe5dfb620cd6
+# Source0-md5:	bc3392fda8b0118461528168494aaaad
 URL:		http://do.davebsd.com/
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.54
