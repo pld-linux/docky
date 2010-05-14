@@ -28,6 +28,7 @@ BuildRequires:	mono-csharp >= 1.1.13
 BuildRequires:	mono-devel >= 2.2.0
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	rpmbuild(monoautodeps)
 BuildRequires:	sed >= 4.0
