@@ -2,7 +2,7 @@
 Summary:	Docky - a full fledged dock application
 Name:		docky
 Version:	2.0.6
-Release:	1
+Release:	2
 License:	GPL v3
 Group:		X11/Applications
 Source0:	http://launchpad.net/docky/2.0/%{version}/+download/%{name}-%{version}.tar.gz
