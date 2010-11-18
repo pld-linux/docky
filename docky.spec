@@ -2,11 +2,12 @@
 Summary:	Docky - a full fledged dock application
 Name:		docky
 Version:	2.0.7
-Release:	1
+Release:	2
 License:	GPL v3
 Group:		X11/Applications
 Source0:	http://launchpad.net/docky/2.0/%{version}/+download/%{name}-%{version}.tar.gz
 # Source0-md5:	76ec96b4e3d5fdbf946b42913b1f3e28
+Patch0:		%{name}-mono28.patch
 URL:		https://launchpad.net/docky/
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.54
@@ -52,6 +53,7 @@ Development information for Docky plugins.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
