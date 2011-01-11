@@ -1,13 +1,12 @@
 %include	/usr/lib/rpm/macros.mono
 Summary:	Docky - a full fledged dock application
 Name:		docky
-Version:	2.0.8
+Version:	2.0.10
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
 Source0:	http://launchpad.net/docky/2.0/%{version}/+download/%{name}-%{version}.tar.gz
-# Source0-md5:	b7c6cce45a468ed3eac8290a85ff117b
-Patch0:		%{name}-mono28.patch
+# Source0-md5:	16bf3050eb309379350d7294276a373c
 URL:		https://launchpad.net/docky/
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.54
@@ -53,7 +52,6 @@ Development information for Docky plugins.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -118,6 +116,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*/mimetypes/extension.svg
 %dir %{py_sitescriptdir}/docky
 %{py_sitescriptdir}/docky/*.py[co]
+%{_mandir}/man1/docky.1*
 
 %files devel
 %defattr(644,root,root,755)
