@@ -1,22 +1,22 @@
 %include	/usr/lib/rpm/macros.mono
 Summary:	Docky - a full fledged dock application
 Name:		docky
-Version:	2.0.11
-Release:	2
+Version:	2.1.0
+Release:	0.1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	http://launchpad.net/docky/2.0/%{version}/+download/%{name}-%{version}.tar.gz
-# Source0-md5:	c79edc09358252ebb7d298cdc56905fb
+Source0:	http://launchpad.net/docky/2.1/%{version}/+download/%{name}-%{version}.tar.gz
+# Source0-md5:	6643484dc1db2b60d3ed5159a461f6bb
 URL:		https://launchpad.net/docky/
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
+BuildRequires:	dotnet-dbus-sharp-devel >= 1:0.7.0
+BuildRequires:	dotnet-dbus-sharp-glib-devel >= 0.5.0
+BuildRequires:	dotnet-gio-sharp-devel >= 0.2-2
 BuildRequires:	dotnet-gnome-desktop-sharp-devel
-BuildRequires:	dotnet-gnome-keyring-sharp-devel >= 96902-2
+BuildRequires:	dotnet-gnome-keyring-sharp-devel >= 1.0.0
 BuildRequires:	dotnet-gnome-sharp-devel
-BuildRequires:	dotnet-gtk-sharp2-devel
-BuildRequires:	dotnet-ndesk-dbus-glib-sharp-devel
-BuildRequires:	dotnet-ndesk-dbus-sharp-devel
 BuildRequires:	dotnet-notify-sharp-devel
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.18.1
@@ -59,7 +59,8 @@ Development information for Docky plugins.
 %{__aclocal} -I m4/shamrock
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--enable-release
 %{__make}
 
 %install
@@ -91,32 +92,32 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/docky
 %attr(755,root,root) %{_libdir}/docky/Docky.exe
 %{_libdir}/docky/Docky.addins
-%{_libdir}/docky/Docky.exe.mdb
+#%%{_libdir}/docky/Docky.exe.mdb
 %{_libdir}/docky/Docky.*.dll
 %{_libdir}/docky/Docky.*.dll.config
-%{_libdir}/docky/Docky.*.dll.mdb
-%attr(755,root,root) %{_libdir}/docky/gapi_codegen.exe
-%{_libdir}/docky/gapi_codegen.exe.mdb
+#%%{_libdir}/docky/Docky.*.dll.mdb
+#%%attr(755,root,root) %{_libdir}/docky/gapi_codegen.exe
+#%%{_libdir}/docky/gapi_codegen.exe.mdb
 %{_libdir}/docky/gio-sharp.dll
 %{_libdir}/docky/gio-sharp.dll.config
 %dir %{_libdir}/docky/plugins
 %{_libdir}/docky/plugins/*.dll
-%{_libdir}/docky/plugins/*.dll.mdb
+#%%{_libdir}/docky/plugins/*.dll.mdb
 %dir %{_datadir}/docky
 %{_datadir}/docky/ClockTheme
 %{_datadir}/docky/*.png
-%dir %{_datadir}/docky/helpers
+#%%dir %{_datadir}/docky/helpers
 # keep .py files in that dir
-%attr(755,root,root) %{_datadir}/docky/helpers/*.py
-%attr(755,root,root) %{_datadir}/docky/helpers/metadata
+#%%attr(755,root,root) %{_datadir}/docky/helpers/*.py
+#%%attr(755,root,root) %{_datadir}/docky/helpers/metadata
 %{_datadir}/docky/themes
 %{_sysconfdir}/xdg/autostart/docky.desktop
 %{_desktopdir}/docky.desktop
 %{_iconsdir}/hicolor/*/apps/docky.svg
 %{_iconsdir}/hicolor/*/apps/gmail.png
 %{_iconsdir}/hicolor/*/mimetypes/extension.svg
-%dir %{py_sitescriptdir}/docky
-%{py_sitescriptdir}/docky/*.py[co]
+#%%dir %{py_sitescriptdir}/docky
+#%%{py_sitescriptdir}/docky/*.py[co]
 %{_mandir}/man1/docky.1*
 
 %files devel
@@ -125,4 +126,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/docky.items.pc
 %{_pkgconfigdir}/docky.services.pc
 %{_pkgconfigdir}/docky.widgets.pc
-%{_pkgconfigdir}/docky.windowing.pc
+#%%{_pkgconfigdir}/docky.windowing.pc
