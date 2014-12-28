@@ -18,7 +18,7 @@ BuildRequires:	dotnet-gnome-desktop-sharp-devel
 BuildRequires:	dotnet-gnome-keyring-sharp-devel >= 1.0.0
 BuildRequires:	dotnet-gnome-sharp-devel
 BuildRequires:	dotnet-notify-sharp-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.18.1
 BuildRequires:	gtk+2-devel >= 1:2.14.3
 BuildRequires:	intltool
