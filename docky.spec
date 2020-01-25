@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.mono
 Summary:	Docky - a full fledged dock application
 Name:		docky
 Version:	2.1.1
